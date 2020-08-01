@@ -2,8 +2,9 @@
 
 # TO-DO
 # DONE - Work out IF statement to stop round-ups from appearing in transactions
-# Work out IF statement to stop "Quick save transfer" from showing too
+# Work out IF statement to stop "Quick save transfer", "Transfer from X saving" and "Interest" from showing
 # Move $ to start of values, but keep total working
+# Fix x.xx9999999999$ from showing in Total Balance
 
 # Retrieve Balance
     - platform: rest
