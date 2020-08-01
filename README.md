@@ -1,4 +1,4 @@
-# up_banking_homeassistant
+# Up Banking Home Assistant
 Sensors for [Home Assistant](https://www.home-assistant.io/) integration of [Up Banking](https://up.com.au/)'s API
 
 I've made this as clean as possible for now. Custom Integration is in the pipeline, but someone feel free to beat me to it.
