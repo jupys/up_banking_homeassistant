@@ -1,0 +1,37 @@
+# Must have mini-graph-card installed for the fancy smancy graph to show
+# https://github.com/kalkih/mini-graph-card
+
+# See https://twitter.com/splatoonAU/status/1289223906448904192 for what this looks like!
+
+cards:
+  - entities:
+      - entity: sensor.total_balance
+      - entity: sensor.spending_balance
+      - entity: sensor.rainy_day_balance
+    title: Balance
+    type: entities
+  - entities:
+      - color: '#77DD77'
+        entity: sensor.spending_balance
+        name: "\U0001F4B2\U0001F911"
+      - color: '#ADD8E6'
+        entity: sensor.rainy_day_balance
+        name: ☔
+    hours_to_show: 72
+    points_per_hour: 1
+    # change upper and lower_bound to whatever suits you and your bank account
+    upper_bound: 1000
+    lower_bound: 100
+    name: Balances
+    show:
+      labels: false
+    type: 'custom:mini-graph-card'
+  - entities:
+      - entity: sensor.recent_transaction
+      - entity: sensor.recent_transaction2
+      - entity: sensor.recent_transaction3
+      - entity: sensor.recent_transaction4
+      - entity: sensor.recent_transaction5
+    title: Recent Transactions
+    type: entities
+type: vertical-stack
