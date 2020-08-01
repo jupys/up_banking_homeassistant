@@ -50,41 +50,41 @@
         # Transaction time.
         recent_transaction:
           friendly_name_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', ' Quick save transfer to rainy day fund']) | list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', 'Quick save transfer to rainy day fund']) | list %}
            {{ parsed[0]["attributes"]["description"] }}
           value_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', ' Quick save transfer to rainy day fund']) | list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', 'Quick save transfer to rainy day fund']) | list %}
            {{ parsed[0]["attributes"]["amount"]["value"] }}
           unit_of_measurement: '$'
         recent_transaction2:
           friendly_name_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', ' Quick save transfer to rainy day fund']) | list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', 'Quick save transfer to rainy day fund']) | list %}
            {{ parsed[1]["attributes"]["description"] }}
           value_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', ' Quick save transfer to rainy day fund']) | list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', 'Quick save transfer to rainy day fund']) | list %}
            {{ parsed[1]["attributes"]["amount"]["value"] }}
           unit_of_measurement: '$'
         recent_transaction3:
           friendly_name_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', ' Quick save transfer to rainy day fund']) | list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', 'Quick save transfer to rainy day fund']) | list %}
            {{ parsed[2]["attributes"]["description"] }}
           value_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', ' Quick save transfer to rainy day fund']) | list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', 'Quick save transfer to rainy day fund']) | list %}
            {{ parsed[2]["attributes"]["amount"]["value"] }}
           unit_of_measurement: '$'
         recent_transaction4:
           friendly_name_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', ' Quick save transfer to rainy day fund']) | list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', 'Quick save transfer to rainy day fund']) | list %}
            {{ parsed[3]["attributes"]["description"] }}
           value_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', ' Quick save transfer to rainy day fund']) | list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', 'Quick save transfer to rainy day fund']) | list %}
            {{ parsed[3]["attributes"]["amount"]["value"] }}
           unit_of_measurement: '$'
         recent_transaction5:
           friendly_name_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', ' Quick save transfer to rainy day fund']) | list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', 'Quick save transfer to rainy day fund']) | list %}
            {{ parsed[4]["attributes"]["description"] }}
           value_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', ' Quick save transfer to rainy day fund']) | list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"] | rejectattr('attributes.description', 'in',['Round Up', 'Interest', 'Cover from', 'Cover to', 'Quick save transfer from Spending', 'Quick save transfer to rainy day fund']) | list %}
            {{ parsed[4]["attributes"]["amount"]["value"] }}
           unit_of_measurement: '$'
