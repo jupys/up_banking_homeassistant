@@ -3,6 +3,8 @@ Sensors for [Home Assistant](https://www.home-assistant.io/) integration of [Up 
 
 I've made this as clean as possible for now. Custom Integration is in the pipeline, but someone feel free to beat me to it.
 
+Thanks to phnx on the Home Assistant [Discord](https://discord.gg/c5DvZ4e) for the help with the `% set parsed` assistance!
+
 # Pre-requisites:
 
 - A token retrieved from https://developer.up.com.au/#welcome
@@ -20,5 +22,3 @@ I've made this as clean as possible for now. Custom Integration is in the pipeli
 Copy/merge /config/sensor.yaml
 
 That's it!
-
-Thanks to phnx on the Home Assistant [Discord](https://discord.gg/c5DvZ4e) for the help with the `% set parsed` assistance!
