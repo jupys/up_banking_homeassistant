@@ -2,9 +2,11 @@
 
 # TO-DO
 # DONE - Work out IF statement to stop round-ups from appearing in transactions
-# Work out IF statement to stop "Quick save transfer", "Transfer from X saving" and "Interest" from showing
+# DONE - Work out IF statement to stop "Quick save transfer", "Transfer from X saving" and "Interest" from showing
+ # The above one is a little messy. Ideally I'd like to create a dictionary at the top of the sensor to allow rejectattr to parse out anything included there, rather than having multiple rejectattr in the one line. baby steps though.
+ # If someone else is using this, change 'Cover from rent n bills' to whatever an account you transfer from is titled.
 # Move $ to start of values, but keep total working
-# Fix x.xx9999999999$ from showing in Total Balance
+# DONE - Fix x.xx9999999999$ from showing in Total Balance
 
 # Retrieve Balance
     - platform: rest
