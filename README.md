@@ -20,3 +20,5 @@ I've made this as clean as possible for now. Custom Integration is in the pipeli
 Copy/merge /config/sensor.yaml
 
 That's it!
+
+Thanks to phnx on the Home Assistant [Discord](https://discord.gg/c5DvZ4e) for the help with the `% set parsed` assistance!
