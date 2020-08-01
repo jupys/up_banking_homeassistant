@@ -20,20 +20,14 @@
       value_template: 'OK'
     - platform: template
       sensors:
-        # convert accounts to sensors
-        # this doesnt work whatsoever
-        #transactional:
-          #value_template: '{{ states.sensor.up_banking.attributes["data"][0]["attributes"]["displayName"] }}'
-        #savings_1:
-          #value_template: '{{ states.sensor.up_banking.attributes["data"][1]["attributes"]["displayName"] }}'
-        # convert balances to sensors
-        # it's ez pz to make new sensors, just copy/paste the below sensors and change names and the [x] array integer
+        # Retrieve Account Names and Balances
+        # it's ez pz to make new sensors, just copy/paste the below sensors, change the 'eg_balance' and the [x] array integers
         spending_balance:
-          friendly_name: Spending
+          friendly_name_template: '{{ states.sensor.up_balances.attributes["data"][0]["attributes"]["displayName"] }}'
           value_template: '{{ states.sensor.up_balances.attributes["data"][0]["attributes"]["balance"]["value"] }}'
           unit_of_measurement: '$'
         rainy_day_balance:
-          friendly_name: Rainy Day Account
+          friendly_name_template: '{{ states.sensor.up_balances.attributes["data"][1]["attributes"]["displayName"] }}'
           value_template: '{{ states.sensor.up_balances.attributes["data"][1]["attributes"]["balance"]["value"] }}'
           unit_of_measurement: '$'
 
