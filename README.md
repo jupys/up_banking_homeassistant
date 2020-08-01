@@ -1,7 +1,7 @@
 # Up Banking Home Assistant
 Sensors for [Home Assistant](https://www.home-assistant.io/) integration of [Up Banking](https://up.com.au/)'s API
 
-I've made this as clean as possible for now. Custom Integration is in the pipeline, but someone feel free to beat me to it.
+I've made this as clean as possible for now. Custom Component is in the pipeline, but someone feel free to beat me to it.
 
 Thanks to phnx on the Home Assistant [Discord](https://discord.gg/c5DvZ4e) for the help with the `% set parsed` assistance!
 
@@ -36,7 +36,7 @@ That's it!
 
 - DONE - Work out IF statement to stop "Quick save transfer", "Transfer from X saving" and "Interest" from showing
   - The above one is a little messy. Ideally I'd like to create a dictionary at the top of the sensor to allow rejectattr to parse out anything included there, rather than having multiple rejectattr in the one line. baby steps though.
-  - If someone else is using this, change 'Cover from rent n bills' to whatever an account you transfer from is titled.
+  -  It seems impossible to use wildcard values and my own dictionary with Jinja2's rejectattr, but I've done what I can to limit the lines from 72 onwards. Edit those to your leisure.
 - Move $ to start of values, but keep total working
 - DONE - Fix x.xx9999999999$ from showing in Total Balance
 - DONE - Work out IF statement to stop round-ups from appearing in transactions
