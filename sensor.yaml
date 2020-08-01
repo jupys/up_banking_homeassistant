@@ -40,7 +40,7 @@
     - platform: template
       sensors:
         total_balance:
-          value_template: '{{ ((states.sensor.spending_balance.state | float) + (states.sensor.rainy_day_balance.state | float)) }}'
+          value_template: '{{ ((states.sensor.spending_balance.state | float) + (states.sensor.rainy_day_balance.state | float))  | round(2) }}'
           friendly_name: Total Balance
           unit_of_measurement: '$'
 
