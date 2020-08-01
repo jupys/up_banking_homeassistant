@@ -48,7 +48,7 @@
 # This will grab the most recent 10 transactions, showing only the most recent 5, excluding any Round Up values.
     - platform: rest
       name: up_transactions
-      resource: https://api.up.com.au/api/v1/transactions/?page[size]=10
+      resource: https://api.up.com.au/api/v1/transactions/?page[size]=20
       headers:
         Authorization: !secret up_api
       method: GET
@@ -59,44 +59,44 @@
       value_template: 'OK'
     - platform: template
       sensors:
-        # Transaction time
+        # Transaction time.
         recent_transaction:
           friendly_name_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|rejectattr('attributes.description', 'eq', 'Interest')|rejectattr('attributes.description', 'eq', 'Cover from rent n bills')|rejectattr('attributes.description', 'eq', 'Cover to Spending')|list %}
            {{ parsed[0]["attributes"]["description"] }}
           value_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|rejectattr('attributes.description', 'eq', 'Interest')|rejectattr('attributes.description', 'eq', 'Cover from rent n bills')|rejectattr('attributes.description', 'eq', 'Cover to Spending')|list %}
            {{ parsed[0]["attributes"]["amount"]["value"] }}
           unit_of_measurement: '$'
         recent_transaction2:
           friendly_name_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|rejectattr('attributes.description', 'eq', 'Interest')|rejectattr('attributes.description', 'eq', 'Cover from rent n bills')|rejectattr('attributes.description', 'eq', 'Cover to Spending')|list %}
            {{ parsed[1]["attributes"]["description"] }}
           value_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|rejectattr('attributes.description', 'eq', 'Interest')|rejectattr('attributes.description', 'eq', 'Cover from rent n bills')|rejectattr('attributes.description', 'eq', 'Cover to Spending')|list %}
            {{ parsed[1]["attributes"]["amount"]["value"] }}
           unit_of_measurement: '$'
         recent_transaction3:
           friendly_name_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|rejectattr('attributes.description', 'eq', 'Interest')|rejectattr('attributes.description', 'eq', 'Cover from rent n bills')|rejectattr('attributes.description', 'eq', 'Cover to Spending')|list %}
            {{ parsed[2]["attributes"]["description"] }}
           value_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|rejectattr('attributes.description', 'eq', 'Interest')|rejectattr('attributes.description', 'eq', 'Cover from rent n bills')|rejectattr('attributes.description', 'eq', 'Cover to Spending')|list %}
            {{ parsed[2]["attributes"]["amount"]["value"] }}
           unit_of_measurement: '$'
         recent_transaction4:
           friendly_name_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|rejectattr('attributes.description', 'eq', 'Interest')|rejectattr('attributes.description', 'eq', 'Cover from rent n bills')|rejectattr('attributes.description', 'eq', 'Cover to Spending')|list %}
            {{ parsed[3]["attributes"]["description"] }}
           value_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|rejectattr('attributes.description', 'eq', 'Interest')|rejectattr('attributes.description', 'eq', 'Cover from rent n bills')|rejectattr('attributes.description', 'eq', 'Cover to Spending')|list %}
            {{ parsed[3]["attributes"]["amount"]["value"] }}
           unit_of_measurement: '$'
         recent_transaction5:
           friendly_name_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|rejectattr('attributes.description', 'eq', 'Interest')|rejectattr('attributes.description', 'eq', 'Cover from rent n bills')|rejectattr('attributes.description', 'eq', 'Cover to Spending')|list %}
            {{ parsed[4]["attributes"]["description"] }}
           value_template: >-
-           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|list %}
+           {% set parsed = states.sensor.up_transactions.attributes["data"]|rejectattr('attributes.description', 'eq', 'Round Up')|rejectattr('attributes.description', 'eq', 'Interest')|rejectattr('attributes.description', 'eq', 'Cover from rent n bills')|rejectattr('attributes.description', 'eq', 'Cover to Spending')|list %}
            {{ parsed[4]["attributes"]["amount"]["value"] }}
           unit_of_measurement: '$'
