@@ -43,6 +43,8 @@ That's it!
 
 Moving the dollar sign to the start of the balance can be done by adding another template sensor, which still allows for all calculations (such as total balance, and any other calculation the user wishes) to be made. Adding extra template sensors to display a "correct" value doesn't noticably slow down Home Assistant in my testing, however, YMMV
 
+I have adjusted the sensor.yaml to reflect this change.
+
 
 
 # Recently Added:
@@ -53,3 +55,4 @@ Moving the dollar sign to the start of the balance can be done by adding another
   - The above one is a little messy. Ideally I'd like to create a dictionary at the top of the sensor to allow rejectattr to parse out anything included there, rather than having multiple rejectattr in the one line. baby steps though.
   -  It seems impossible to use wildcard values and my own dictionary with Jinja2's rejectattr, but I've done what I can to limit the lines from 72 onwards. Edit those to your leisure.
 - DONE - Added information about purchases when clicking on a transaction, more data fields can be added later on potentially.
+- DONE - Added dollar sign before account balance using an extra sensor.
