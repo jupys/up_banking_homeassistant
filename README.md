@@ -4,6 +4,7 @@ Sensors for [Home Assistant](https://www.home-assistant.io/) integration of [Up 
 I've made this as clean as possible for now. Custom Component is in the pipeline, but someone feel free to beat me to it.
 
 Thanks to phnx on the Home Assistant [Discord](https://discord.gg/c5DvZ4e) for the help with the `% set parsed` assistance!
+Additional thanks to [Jack465](https://github.com/Jack465) for their [PR](https://github.com/ryandanger/up_banking_homeassistant/pull/1) which prompted me to add a ton more features!
 
 # What can I do with this?
 
@@ -13,6 +14,25 @@ Tons! This initial sensor.yaml config will map transactions and balances to sepa
 - Have a dance-party of lights in your home when you have money sent to your account
 - Flash lights red when money leaves your accounts
 - Many, many more features! Let me know on twitter (@splatoonAU) if you have any other ways that you've implemented this!
+
+# Features:
+
+| Name                 | Description                          |
+| -------------------- | ------------------------------------ |
+| Retrieve balances    | Retrieve account balances            |
+| Format balances      | Append $ to value of accounts        |
+| Removal of transfers | Allows to view cleaner transactions  |
+|                      |                                      |
+| Recent transactions  | Retrieve 5x recent transactions      |
+| Format transactions  | Append $ to value of transactions,   |
+|                      | plus additional lookup values:       |
+| incl.                | Date                                 |
+|                      | Full Name                            |
+|                      | Message                              |
+|                      | Transaction Status                   |
+|                      | RoundUp Amount                       |
+|                      | Category/Parent Category             |
+|                      | Cashback (not yet implemented in Up) |
 
 # Pre-requisites:
 
@@ -30,22 +50,15 @@ Tons! This initial sensor.yaml config will map transactions and balances to sepa
 
 Copy/merge /config/sensor.yaml
 
-That's it!
+That's it! However, do feel free to edit and configure to your liking :)
 
-# ~~To-Do:~~
+# To-Do:
 
-- ~~Show full information about a purchase when clicking on a recent_transaction sensor~~
+- Fix recent_saving_transaction, as I'd really like to automate loud noises when a savings account is touched. This is easy to do if you replace parts of the URL to make it static, though this is potentially unsafe to store in sensor.yaml, however ymmv :)
 
-# ~~Cannot be added~~
+# Cannot be added
 
-- ~~Move $ to start of values, but keep total working~~
-  - ~~Due to Home Assistant and Jinja2's restrictions, it's not possible to add $ to the beginning of a friendly_name_template and also work out a sum for Total Balance.~~
-
-Moving the dollar sign to the start of the balance can be done by adding another template sensor, which still allows for all calculations (such as total balance, and any other calculation the user wishes) to be made. Adding extra template sensors to display a "correct" value doesn't noticably slow down Home Assistant in my testing, however, YMMV
-
-I have adjusted the sensor.yaml to reflect this change.
-
-
+- N/A right now!
 
 # Recently Added:
 
@@ -54,5 +67,5 @@ I have adjusted the sensor.yaml to reflect this change.
 - DONE - Work out IF statement to stop "Quick save transfer", "Transfer from X saving" and "Interest" from showing
   - The above one is a little messy. Ideally I'd like to create a dictionary at the top of the sensor to allow rejectattr to parse out anything included there, rather than having multiple rejectattr in the one line. baby steps though.
   -  It seems impossible to use wildcard values and my own dictionary with Jinja2's rejectattr, but I've done what I can to limit the lines from 72 onwards. Edit those to your leisure.
-- DONE - Added information about purchases when clicking on a transaction, more data fields can be added later on potentially.
-- DONE - Added dollar sign before account balance using an extra sensor.
+- DONE - Thanks to Jack465, we can now show dollar values at the beginning of values
+- DONE - Add additional transaction details to each recent_transaction, all shown in Features above
